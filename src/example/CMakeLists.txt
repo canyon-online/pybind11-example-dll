@@ -1,0 +1,2 @@
+file(GLOB_RECURSE PYTHON_FILES "*.py")
+install(FILES ${PYTHON_FILES} DESTINATION example)

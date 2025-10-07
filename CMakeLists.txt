@@ -5,6 +5,7 @@ message(STATUS "Configuring ${SKBUILD_PROJECT_NAME}")
 set(PYBIND11_FINDPYTHON ON)
 add_subdirectory(extern/pybind11)
 add_subdirectory(src/mylib)
+add_subdirectory(src/example)
 
 target_compile_definitions(mylib PRIVATE BUILDING_MYLIB)
 set_target_properties(mylib PROPERTIES
@@ -15,8 +16,8 @@ pybind11_add_module(example src/example.cpp)
 target_include_directories(example PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
 target_link_libraries(example PRIVATE mylib)
 
-install(TARGETS example LIBRARY DESTINATION .)
+install(TARGETS example LIBRARY DESTINATION example)
 install(TARGETS mylib 
-    RUNTIME DESTINATION .
-    LIBRARY DESTINATION .
+    RUNTIME DESTINATION example
+    LIBRARY DESTINATION example
 )
