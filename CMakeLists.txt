@@ -17,3 +17,11 @@ install(TARGETS mylib
     RUNTIME DESTINATION .
     LIBRARY DESTINATION .
 )
+
+if(WIN32)
+    add_custom_command(TARGET example POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        $<TARGET_FILE:mylib>
+        $<TARGET_FILE_DIR:example>
+    )
+endif()
