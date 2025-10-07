@@ -7,6 +7,9 @@ add_subdirectory(extern/pybind11)
 add_subdirectory(src/mylib)
 
 target_compile_definitions(mylib PRIVATE BUILDING_MYLIB)
+set_target_properties(mylib PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY $<TARGET_FILE_DIR:example>
+)
 
 pybind11_add_module(example src/example.cpp)
 target_include_directories(example PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
@@ -17,11 +20,3 @@ install(TARGETS mylib
     RUNTIME DESTINATION .
     LIBRARY DESTINATION .
 )
-
-if(WIN32)
-    add_custom_command(TARGET example POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        $<TARGET_FILE:mylib>
-        $<TARGET_FILE_DIR:example>
-    )
-endif()
