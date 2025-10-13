@@ -15,6 +15,13 @@ pybind11_add_module(example src/example.cpp)
 target_include_directories(example PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
 target_link_libraries(example PRIVATE mylib)
 
+if(NOT WIN32)
+    set_target_properties(example PROPERTIES
+        INSTALL_RPATH "$ORIGIN"
+        BUILD_WITH_INSTALL_RPATH TRUE
+    )
+endif()
+
 install(TARGETS example LIBRARY DESTINATION example)
 install(TARGETS mylib 
     RUNTIME DESTINATION example
