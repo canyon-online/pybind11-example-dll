@@ -12,5 +12,8 @@
 #define MYLIB_API
 #endif
 
-MYLIB_API std::string greet(const std::string &name);
-MYLIB_API double times_two(double x);
+namespace mylib
+{
+    MYLIB_API std::string greet(const std::string &name);
+    MYLIB_API double times_two(double x);
+} // namespace mylib

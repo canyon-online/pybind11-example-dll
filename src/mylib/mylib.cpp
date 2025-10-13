@@ -1,15 +1,18 @@
 #include "mylib.h"
-
+#include <string>
 #include <sstream>
 
-std::string greet(const std::string &name)
+namespace mylib
 {
-    std::ostringstream os;
-    os << "Hello, " << name;
-    return os.str();
-}
+    std::string greet(const std::string &name)
+    {
+        std::ostringstream os;
+        os << "Hello, " << name;
+        return os.str();
+    }
 
-double times_two(double x)
-{
-    return x * 2.0;
-}
+    double times_two(double x)
+    {
+        return x * 2.0;
+    }
+} // namespace mylib
