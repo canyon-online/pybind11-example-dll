@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.18...4.0)
 project(${SKBUILD_PROJECT_NAME} LANGUAGES CXX)
-message(STATUS "Configuring ${SKBUILD_PROJECT_NAME}")
 
 set(PYBIND11_FINDPYTHON ON)
 add_subdirectory(extern/pybind11)

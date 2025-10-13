@@ -1,2 +1,5 @@
-file(GLOB_RECURSE PYTHON_FILES "*.py")
-install(FILES ${PYTHON_FILES} DESTINATION example)
+install(FILES 
+    __init__.py
+    example.pyi
+    DESTINATION example
+)
