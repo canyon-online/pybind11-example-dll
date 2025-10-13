@@ -1,12 +1,12 @@
 # pybind11-example-dll
 
-A simple example project demonstrating how to use pybind11 to create Python bindings for C++ code that uses a separate DLL library.
+A simple example project demonstrating how to use pybind11 to create Python bindings for C++ code that uses a separate shared library.
 
 ## Overview
 
 This project creates a Python module `example` that exposes C++ functions to Python. The project demonstrates:
-- Building a shared library (DLL on Windows) with exported functions
-- Creating pybind11 bindings that use the DLL functions
+- Building a shared library with exported functions
+- Creating pybind11 bindings that use the shared functions
 - Cross-platform compilation (Windows/Linux)
 - Modern Python packaging with scikit-build-core
 
@@ -22,6 +22,7 @@ pybind11-example-dll/
 ├── src/
 │   ├── example/
 │   │   ├── __init__.py             # Python package initialization
+│   │   ├── example.pyi             # Package type hinting
 │   │   └── CMakeLists.txt          # Package-specific CMake config
 │   ├── mylib/
 │   │   ├── CMakeLists.txt          # Library-specific CMake config
@@ -37,7 +38,7 @@ pybind11-example-dll/
 
 ## Requirements
 
-- Python 3.9+
+- Python 3.12+
 - CMake 3.18+
 - Visual Studio 2022+ (on Windows) or GCC 4.8+/Clang 3.3+ (on Linux)
 - Git (for submodules)
@@ -85,6 +86,7 @@ After installation, the package is organized as:
 site-packages/
 └── example/
     ├── __init__.py                 # Package initialization
+    ├── example.pyi                 # Package type hinting
     ├── example.so/.pyd             # Compiled pybind11 module
     └── mylib.dll/.so               # Shared library
 ```
