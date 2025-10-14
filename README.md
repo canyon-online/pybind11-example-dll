@@ -25,8 +25,8 @@ pybind11-example-dll/
 │   │   └── example.pyi             # Package type hinting
 │   ├── mylib/
 │   │   ├── CMakeLists.txt          # Library-specific CMake config
-│   │   ├── mylib.cpp                   # Shared library implementation
-│   │   └── mylib.h                     # Shared library header with exports
+│   │   ├── mylib.cpp               # Shared library implementation
+│   │   └── mylib.h                 # Shared library header with exports
 │   └── example.cpp                 # C++ source with pybind11 bindings
 ├── extern/
 │   └── pybind11/                   # pybind11 submodule (v3.0.1)

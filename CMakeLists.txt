@@ -15,7 +15,7 @@ set_target_properties(mylib PROPERTIES
 )
 
 pybind11_add_module(example src/example.cpp)
-target_include_directories(example PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
+target_include_directories(example PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
 target_link_libraries(example PRIVATE mylib)
 
 if(NOT WIN32)
