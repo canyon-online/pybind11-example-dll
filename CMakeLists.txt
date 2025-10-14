@@ -26,7 +26,7 @@ if(NOT WIN32)
 endif()
 
 install(TARGETS example LIBRARY DESTINATION example)
-install(TARGETS mylib 
+install(TARGETS mylib
     RUNTIME DESTINATION example
     LIBRARY DESTINATION example
 )

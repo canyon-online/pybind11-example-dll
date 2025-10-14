@@ -8,7 +8,7 @@ This project creates a Python module `example` that exposes C++ functions to Pyt
 - Building a shared library with exported functions
 - Creating pybind11 bindings that use the shared functions
 - Cross-platform compilation (Windows/Linux)
-- Modern Python packaging with scikit-build-core
+- Python packaging with scikit-build-core
 
 The module exposes three functions:
 - `square()` - takes a number and returns its square
@@ -22,8 +22,7 @@ pybind11-example-dll/
 ├── src/
 │   ├── example/
 │   │   ├── __init__.py             # Python package initialization
-│   │   ├── example.pyi             # Package type hinting
-│   │   └── CMakeLists.txt          # Package-specific CMake config
+│   │   └── example.pyi             # Package type hinting
 │   ├── mylib/
 │   │   ├── CMakeLists.txt          # Library-specific CMake config
 │   │   ├── mylib.cpp                   # Shared library implementation
@@ -31,6 +30,8 @@ pybind11-example-dll/
 │   └── example.cpp                 # C++ source with pybind11 bindings
 ├── extern/
 │   └── pybind11/                   # pybind11 submodule (v3.0.1)
+├── tests/
+│   └── test_example.py             # Python package test
 ├── CMakeLists.txt                  # Main CMake build configuration
 ├── pyproject.toml                  # Python project configuration
 └── README.md
