@@ -4,7 +4,6 @@ project(${SKBUILD_PROJECT_NAME} LANGUAGES CXX)
 set(PYBIND11_FINDPYTHON ON)
 add_subdirectory(extern/pybind11)
 add_subdirectory(src/mylib)
-add_subdirectory(src/example)
 
 target_compile_definitions(mylib PRIVATE BUILDING_MYLIB)
 set_target_properties(mylib PROPERTIES
